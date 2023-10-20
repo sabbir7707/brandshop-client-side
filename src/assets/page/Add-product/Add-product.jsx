@@ -39,6 +39,7 @@ const Addproduct = () => {
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
+                    window.location.reload()
 
                 }
             })

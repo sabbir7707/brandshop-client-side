@@ -1,7 +1,10 @@
 import { data } from 'autoprefixer';
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { AuthContext } from '../../../Authprovider/Authprovider';
 
 const Mycart_show = ({dara ,prodictess , setprodictess }) => {
+  const { loding } = useContext(AuthContext)
     const { _id, Name, Brand_Name, Type, Price, Short_description, Rating, Image } = dara
  const handeleDelete = _id =>{
     
@@ -35,8 +38,15 @@ const Mycart_show = ({dara ,prodictess , setprodictess }) => {
                 'Your Product has been deleted.',
                 'success'
               )  
-              const remaning = prodictess .filter(pro => pro._id !== _id) 
-              setprodictess(remaning);
+              const remaning = prodictess.filter(pro => pro._id !== _id) 
+              
+                 setprodictess(remaning);
+                 window.location.reload();
+              
+           
+              
+              
+
         }
       })
     }

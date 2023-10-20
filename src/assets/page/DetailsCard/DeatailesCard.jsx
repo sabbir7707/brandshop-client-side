@@ -32,7 +32,7 @@ const DeatailesCard = () => {
 
                 <div className="p-6">
                     <h6 className="mb-4 block font-sans text-base font-semibold uppercase leading-relaxed tracking-normal text-blue-500 antialiased">
-                        {}
+                        { }
                     </h6>
                     <h6 className="mb-4 block font-sans text-base font-semibold uppercase leading-relaxed tracking-normal text-gray-700 antialiased">
                         <h1> Product:{Name}</h1>
@@ -46,10 +46,10 @@ const DeatailesCard = () => {
                         <h4> Product Short  Description </h4>
                     </h4>
                     <p className="mb-8 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                        { Short_description}
+                        {Short_description}
                     </p>
 
-                    
+
                 </div>
             </div>
 

@@ -1,48 +1,48 @@
 
-import { Rating } from '@material-tailwind/react';
+
 import Swal from 'sweetalert2'
 const UpdateCard = () => {
     const handelUpdateProduct = event => {
-        
-            event.preventDefault();
-            const form = event.target;
-    
-            const Name = form.Name.value;
-            const Brand_Name = form.Brand_Name.value;
-            const Type = form.Type.value;
-            const Price = form.Price.value;
-            const Short_description = form.Short_description.value;
-            const Rating = form.Rating.value;
-            const Image = form.Image.value;
-    
-            const products = { Name, Brand_Name, Type, Price, Short_description, Rating, Image }
-            console.log(products);
-    
-            fetch('http://localhost:5000/product', {
-                method: 'PUT',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify(products)
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.insertedId) {
-                        Swal.fire({
-                            title: 'success!',
-                            text: 'user update successfullu',
-                            icon: 'success',
-                            confirmButtonText: 'Cool'
-                        })
-    
-                    }
-                })
-    
-    
-      
 
- }
+        event.preventDefault();
+        const form = event.target;
+
+        const Name = form.Name.value;
+        const Brand_Name = form.Brand_Name.value;
+        const Type = form.Type.value;
+        const Price = form.Price.value;
+        const Short_description = form.Short_description.value;
+        const Rating = form.Rating.value;
+        const Image = form.Image.value;
+
+        const products = { Name, Brand_Name, Type, Price, Short_description, Rating, Image }
+        console.log(products);
+
+        fetch('http://localhost:5000/product', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(products)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'success!',
+                        text: 'user update successfullu',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+
+                }
+            })
+
+
+
+
+    }
     return (
         <div>
             <div className=" text-center items-center mx-auto">
@@ -64,11 +64,11 @@ const UpdateCard = () => {
                 <div className="grid gap-2 mb-6 md:grid-cols-2">
                     <div >
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Name</p>
-                        <input type="text" name="Name"  placeholder="Name" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Name" placeholder="Name" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Brand Name</p>
-                        <input type="text" name="Brand_Name"  placeholder="Brand Name" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Brand_Name" placeholder="Brand Name" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Type</p>
@@ -76,19 +76,19 @@ const UpdateCard = () => {
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Price</p>
-                        <input type="text" name="Price"   placeholder="Price" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Price" placeholder="Price" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Short description</p>
-                        <input type="text" name="Short_description"  placeholder="Short_description" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Short_description" placeholder="Short_description" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white"> Rating</p>
-                        <input type="text" name="Rating"  placeholder=" Rating" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Rating" placeholder=" Rating" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Image</p>
-                        <input type="text" name="Image"  placeholder="Image" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Image" placeholder="Image" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
 
 

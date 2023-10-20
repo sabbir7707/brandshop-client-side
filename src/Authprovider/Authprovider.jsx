@@ -48,7 +48,7 @@ const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
             console.log('use this is a auth ')
             setuser(currentuser)
-            setloding(false)
+            setloding(false) 
 
 
         });
