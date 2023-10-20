@@ -12,7 +12,7 @@ const ReviewSection = () => {
                         <span className=" text-amber-600">  Here </span>is our  Client Reviews </h2>
 
                     <div className=" text-center ">
-                        <p className=" pb-10 text-center lg:w-[700px] mx-auto font-sans text-base font-light leading-relaxed text-inherit antialiased">In Today is digital age, computer literacy is not just an advantage; it's a necessity. Our computer education services are designed to equip individuals of all backgrounds and skill levels with the knowledge and skills needed to excel in the ever-evolving world of technology.</p>
+                        <p className=" pb-10 text-center lg:w-[700px] mx-auto font-sans text-base font-light leading-relaxed text-inherit antialiased">Welcome to our Technology and Electronics Brand Shop, where innovation and cutting-edge products meet your needs and desires. We are your one-stop destination for the latest and most trusted technology and electronics products on the market.</p>
                     </div>
 
                 </div>
@@ -44,8 +44,8 @@ const ReviewSection = () => {
                         </div>
                     </div>
                     <div className="p-4 space-y-2 text-sm dark:text-gray-950">
-                        <p>I thought the course was an excellent introduction to the EntraID platform, which covered the key elements of management and strategy.</p>
-                        <p>I will use specific examples of what I’ve learned in our environment as well as hold some of our people accountable for their choices with my new knowledge. The experience of learning via Teams was good. Being able to do it from the convenience of my home was nice. </p>
+                        <p>This store boasts a diverse range of products, from the latest smartphones and laptops to gaming consoles and accessories. Whatever you're looking for, they've got it</p>
+                        <p> I was particularly impressed with their attention to detail when it comes to choosing top-notch brands and models. </p>
                     </div>
                 </div>
 
@@ -69,8 +69,8 @@ const ReviewSection = () => {
                         </div>
                     </div>
                     <div className="p-4 space-y-2 text-sm dark:text-gray-950">
-                        <p>This is a well-refined course that provides three full days of instruction. As a consultant, there was not a scenario left unexplored </p>
-                        <p>Every scenario and question I had was answered within the training. If you don’t have the opportunity to attend in person, definitely take advantage of the self-paced training.It was great to have my team member on this course learning at the same time and able to help each other. Attending over the internet was great!</p>
+                        <p>The staff here is incredibly knowledgeable and friendly. They're always ready to answer questions, provide recommendations, and even explain the nitty-gritty technical details. I had a specific laptop in mind, and the sales representative went above and beyond to guide me through the available options, helping me make an informed decision. </p>
+                        <p>One of my biggest concerns when shopping for electronics is authenticity. But with Cr. Brand Shop, that's never a worry. </p>
                     </div>
                 </div>
                 {/* card 3 */}
@@ -93,8 +93,8 @@ const ReviewSection = () => {
                         </div>
                     </div>
                     <div className="p-4 space-y-2 text-sm dark:text-gray-950">
-                        <p>This is truly a Masterclass. Unlike so many other classes, you will be pushed to complete the labs in the allotted time. Some of the steps walk you through click by click, but most expect you to understand what you are looking at and what is needed to get to the next step.</p>
-                        <p>This is truly a Masterclass. Unlike so many other classes, you will be pushed to complete the labs in the allotted time. Some of the steps walk you through click by click, but most expect you to understand what you are looking at and what is needed to get to the next step.</p>
+                        <p>Their website is intuitive and easy to use, making the shopping process straightforward. I had my new laptop delivered within a few days, and the packaging was secure and well-handled.</p>
+                        <p>Overall, my experience with [Technology and Electronics Brand Shop] has been outstanding. I'm thoroughly satisfied with my purchase, and I'll definitely be returning for all my tech needs.</p>
                     </div>
                 </div>
 

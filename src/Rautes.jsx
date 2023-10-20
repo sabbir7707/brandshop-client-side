@@ -57,7 +57,8 @@ const Router = createBrowserRouter([
 
         {
             path: "/mycart",
-            element:  <ParivateRaute><Mycart></Mycart></ParivateRaute> , 
+            element:  <ParivateRaute><Mycart></Mycart></ParivateRaute> ,
+            loader:() => fetch('http://localhost:5000/product/') 
         },
        
 

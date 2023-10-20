@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../../Authprovider/Authprovider";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
@@ -18,15 +19,29 @@ const Register = () => {
 
 
     const handelRegister = () => {
-        if (!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
-            alert('password ronge')
+        if (!/^(?=.*[A-Z])(?=.*\d)(?=.*\W).{6,}$/.test(password)) {
+              
+            Swal.fire({
+                title: 'error!',
+                text: ' is less than 6 characters one capital letter   one special character ',
+                icon: 'error',
+                confirmButtonText: 'ok'
+            })
+
         }
         else {
 
             if (email) {
                 createuser(email, password).then((result) => console.log(result.user));
 
-                alert('Register suscesfully')
+               
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Register suscesfully',
+                    icon: 'success',
+                    confirmButtonText: 'ok'
+                })
+
                 navigate(location?.state? location.state: '/');
                 
             }
@@ -113,6 +128,19 @@ const Register = () => {
                                         OR
                                     </p>
                                 </div>
+
+                                <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
+                                First register then?
+                                        <a
+                                            href="#!"
+                                            className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
+                                        >
+                                          <Link to='/login' className="text-red-500" >Login </Link> 
+                                               
+                                               
+                                        </a
+                                        >
+                                    </p>
 
 
 

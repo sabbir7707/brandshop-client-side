@@ -2,46 +2,46 @@
 
 import Swal from 'sweetalert2'
 
-  
- 
+
+
 
 const Addproduct = () => {
 
-    const handelAddproduct = event =>{
+    const handelAddproduct = event => {
         event.preventDefault();
-        const form = event.target ;
+        const form = event.target;
 
-        const Name = form .Name.value;
-        const Brand_Name  = form .Brand_Name.value;
-        const Type = form .Type.value;
-        const  Price = form . Price.value;
-        const Short_description = form .Short_description.value;
-        const   Rating = form .  Rating.value;
-        const Image = form .Image.value;
+        const Name = form.Name.value;
+        const Brand_Name = form.Brand_Name.value;
+        const Type = form.Type.value;
+        const Price = form.Price.value;
+        const Short_description = form.Short_description.value;
+        const Rating = form.Rating.value;
+        const Image = form.Image.value;
 
-        const newCoffee = { Name ,Brand_Name, Type, Price,Short_description,  Rating,Image}
+        const newCoffee = { Name, Brand_Name, Type, Price, Short_description, Rating, Image }
         console.log(newCoffee);
 
-        fetch('http://localhost:5000/product',{
+        fetch('http://localhost:5000/product', {
             method: 'POST',
-            headers:{
-                'content-type':'application/json'
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(newCoffee)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if (data.insertedId) {
-                Swal.fire({
-                    title: 'success!',
-                    text: 'user ADD successfullu',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-                
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'success!',
+                        text: 'user ADD successfullu',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+
+                }
+            })
 
 
     }
@@ -59,19 +59,33 @@ const Addproduct = () => {
         Rating
         Add button */
 
-         <div>
- 
+        <div>
+
+
+            <div className=" text-center items-center mx-auto">
+
+                <div className="pt-5">
+                    <h2 className="text-4xl  underline font-extrabold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                        <span className=" text-amber-600"> ADD PRODUCT  </span> Section </h2>
+
+                    <div className=" text-center ">
+                        <p className=" pb-10 text-center lg:w-[700px] mx-auto font-sans text-base font-light leading-relaxed text-inherit antialiased">Welcome to our Technology and Electronics Brand Shop, where innovation and cutting-edge products meet your needs and desires. We are your one-stop destination for the latest and most trusted technology and electronics products on the market.</p>
+                    </div>
+                </div>
+
+            </div>
+
 
 
 
 
             {/* from ar kage  */}
-          
-            
-            <form  
-            onSubmit={handelAddproduct}
-            
-            className=" sm:px-4 md:px-4 lg:px-0   mb-6  mx-auto lg:w-[1200px] ">
+
+
+            <form
+                onSubmit={handelAddproduct}
+
+                className=" sm:px-4 md:px-4 lg:px-0   mb-6  mx-auto lg:w-[1200px] ">
                 <div className="grid gap-2 mb-6 md:grid-cols-2">
                     <div >
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Name</p>
@@ -83,7 +97,7 @@ const Addproduct = () => {
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Type</p>
-                        <input type="text"  name="Type" placeholder="Type" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Type" placeholder="Type" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Price</p>
@@ -109,7 +123,7 @@ const Addproduct = () => {
                 </div>
                 <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  sm:w-auto   lg:w-40 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
             </form>
-           
+
 
 
         </div>

@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../../Authprovider/Authprovider";
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -34,11 +35,24 @@ const Login = () => {
         if(email,password)
         {
             Signin(email,password).then(result =>{
-                alert('log in successfully')
+               Swal.fire({
+                    title: 'success!',
+                    text: 'log in successfully',
+                    icon: 'success',
+                    confirmButtonText: 'ok'
+                })
+            
             })
             .catch((error)=>{
                 seterror(error.message)
-                alert('incorret email  and password')
+              /*   alert('incorret email  and password') */
+              Swal.fire({
+                title: 'error!',
+                text: 'incorret email  and password',
+                icon: 'error',
+                confirmButtonText: 'ok'
+            })
+
                 navigate(location?.state? `${location.state}`: '/');
             })
         }
@@ -46,7 +60,13 @@ const Login = () => {
     }
     const handelGoogle =() =>{
         googlelogin().then((result)=>{
-             alert('login google sucesfully')
+            
+             Swal.fire({
+                title: 'success!',
+                text: 'log in successfully',
+                icon: 'success',
+                confirmButtonText: 'ok'
+            })
              navigate(location?.state? location.state: '/');
         })
     }
