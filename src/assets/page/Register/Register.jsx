@@ -8,11 +8,11 @@ const Register = () => {
     const { createuser } = useContext(AuthContext)
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
-  /*   console.log(email, password); */
+    /*   console.log(email, password); */
 
-  const location = useLocation();
-  console.log(location);
-  const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location);
+    const navigate = useNavigate();
 
 
 
@@ -20,7 +20,7 @@ const Register = () => {
 
     const handelRegister = () => {
         if (!/^(?=.*[A-Z])(?=.*\d)(?=.*\W).{6,}$/.test(password)) {
-              
+
             Swal.fire({
                 title: 'error!',
                 text: ' is less than 6 characters one capital letter   one special character ',
@@ -34,7 +34,7 @@ const Register = () => {
             if (email) {
                 createuser(email, password).then((result) => console.log(result.user));
 
-               
+
                 Swal.fire({
                     title: 'success!',
                     text: 'Register suscesfully',
@@ -42,8 +42,8 @@ const Register = () => {
                     confirmButtonText: 'ok'
                 })
 
-                navigate(location?.state? location.state: '/');
-                
+                navigate(location?.state ? location.state : '/');
+
             }
 
         }
@@ -112,7 +112,7 @@ const Register = () => {
 
                                 {/*   Submit button */}
                                 <button
-                                onClick={handelRegister}
+                                    onClick={handelRegister}
                                     type="submit"
                                     className="inline-block w-full rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                                     data-te-ripple-init
@@ -130,17 +130,17 @@ const Register = () => {
                                 </div>
 
                                 <p className="mb-0 mt-2 pt-1 text-sm font-semibold">
-                                First register then?
-                                        <a
-                                            href="#!"
-                                            className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
-                                        >
-                                          <Link to='/login' className="text-red-500" >Login </Link> 
-                                               
-                                               
-                                        </a
-                                        >
-                                    </p>
+                                    First register then?
+                                    <a
+                                        href="#!"
+                                        className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
+                                    >
+                                        <Link to='/login' className="text-red-500" >Login </Link>
+
+
+                                    </a
+                                    >
+                                </p>
 
 
 

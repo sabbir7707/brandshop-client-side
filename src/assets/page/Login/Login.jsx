@@ -6,68 +6,67 @@ import Swal from "sweetalert2";
 
 
 const Login = () => {
-     
-    const {userr,
+
+    const { userr,
         createuser,
         Signin,
         logout,
         googlelogin,
-        loding} = useContext(AuthContext)
-     
+        loding } = useContext(AuthContext)
+
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("")
     const [crror, seterror] = useState("")
 
-  /*   console.log(email, password); */
+    /*   console.log(email, password); */
 
     const location = useLocation();
-       console.log(location);
-       const navigate = useNavigate();
-     
-     if (loding) {
+    console.log(location);
+    const navigate = useNavigate();
+
+    if (loding) {
         return <span className="loading pt-2 lg:ml-[650px] loading-spinner loading-lg"></span>
-        
-     }
+
+    }
 
 
 
-    const handellogin =() =>{
-        if(email,password)
-        {
-            Signin(email,password).then(result =>{
-               Swal.fire({
+    const handellogin = () => {
+        if (email, password) {
+            Signin(email, password).then(result => {
+                Swal.fire({
                     title: 'success!',
                     text: 'log in successfully',
                     icon: 'success',
                     confirmButtonText: 'ok'
                 })
-            
-            })
-            .catch((error)=>{
-                seterror(error.message)
-              /*   alert('incorret email  and password') */
-              Swal.fire({
-                title: 'error!',
-                text: 'incorret email  and password',
-                icon: 'error',
-                confirmButtonText: 'ok'
-            })
 
-                navigate(location?.state? `${location.state}`: '/');
             })
+                .catch((error) => {
+                    seterror(error.message)
+                    /*   alert('incorret email  and password') */
+                    Swal.fire({
+                        title: 'error!',
+                        text: 'incorret email  and password',
+                        icon: 'error',
+                        confirmButtonText: 'ok'
+                    })
+
+                    navigate(location?.state ? `${location.state}` : '/');
+                })
         }
 
     }
-    const handelGoogle =() =>{
-        googlelogin().then((result)=>{
-            
-             Swal.fire({
+    const handelGoogle = () => {
+        googlelogin().then((result) => {
+
+            Swal.fire({
                 title: 'success!',
                 text: 'log in successfully',
                 icon: 'success',
                 confirmButtonText: 'ok'
             })
-             navigate(location?.state? location.state: '/');
+            navigate(location?.state ? location.state : '/');
         })
     }
 
@@ -103,9 +102,9 @@ const Login = () => {
                                         data-te-ripple-color="light"
                                         className="mx-1 h-9 w-9 rounded-full bg-primary uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]">
 
-                                             <div className="flex justify-center">
-                                             <FcGoogle></FcGoogle>
-                                             </div>
+                                        <div className="flex justify-center">
+                                            <FcGoogle></FcGoogle>
+                                        </div>
                                     </button>
 
 
@@ -207,7 +206,7 @@ const Login = () => {
                                 {/* login Button */}
                                 <div className="text-center lg:text-left">
                                     <button
-                                    onClick={handellogin}
+                                        onClick={handellogin}
                                         type="button"
                                         className="inline-block rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                                         data-te-ripple-init
@@ -222,9 +221,9 @@ const Login = () => {
                                             href="#!"
                                             className="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
                                         >
-                                          <Link to='/Register' className="text-red-500" > Register </Link> 
-                                               
-                                               
+                                            <Link to='/Register' className="text-red-500" > Register </Link>
+
+
                                         </a
                                         >
                                     </p>
