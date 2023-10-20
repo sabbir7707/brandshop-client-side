@@ -1,11 +1,13 @@
 import { useLoaderData } from "react-router-dom";
 import Bannner from "../../../ALL_Componant/Banner/Bannner";
 import Brand_shop_card from "./Brand_shop_card";
+import FaqSection from "../../../ALL_Componant/FaqSection/FaqSection";
+import ReviewSection from "../../../ALL_Componant/ReviewSection/ReviewSection";
 
 const Home = () => {
     const jsonData = useLoaderData();
     return (
-        <div className="mx-auto ">
+        <div  >
 
 
             <Bannner></Bannner>
@@ -31,6 +33,9 @@ const Home = () => {
                 }
 
             </div>
+            <FaqSection></FaqSection>
+            <ReviewSection></ReviewSection>
+
 
 
         </div>
