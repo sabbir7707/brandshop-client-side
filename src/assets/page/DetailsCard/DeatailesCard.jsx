@@ -5,9 +5,13 @@ const DeatailesCard = () => {
 
     const { Brand_Name } = useParams()
     const card = useLoaderData()
+    console.log(Brand_Name);
+  
 
 
-    const findcard = card?.find(carddata => carddata.Brand_Name == Brand_Name)
+    const findcard = card?.find(carddata => carddata._id == Brand_Name)
+
+    
 
 
 

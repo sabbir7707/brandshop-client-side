@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const Servercard = ({ dara }) => {
-    const { Name, Brand_Name, Type, Price, Short_description, Rating, Image } = dara
+    const { _id ,Name, Brand_Name, Type, Price, Short_description, Rating, Image } = dara
     console.log(Brand_Name);
 
 
@@ -37,7 +37,7 @@ const Servercard = ({ dara }) => {
 
                     <div className="card-actions justify-end">
                         <div className="badge badge-outline">
-                            <Link to={`/Details_card/${Brand_Name}`}>
+                            <Link to={`/Details_card/${_id}`}>
 
                                 <button>Details </button>
                             </Link>
