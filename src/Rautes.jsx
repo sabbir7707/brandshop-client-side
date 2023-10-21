@@ -39,26 +39,26 @@ const Router = createBrowserRouter([
         {
             path: "/Ourservice/:BrandName",
             element:   <ParivateRaute><Add_product_item></Add_product_item></ParivateRaute>,
-            loader:() => fetch('http://localhost:5000/product/')  
+            loader:() => fetch('https://brand-shop-server-kqsd80ghj-sabbir-hosains-projects.vercel.app/product/')  
        
         },
         {
             path: "/Details_card/:Brand_Name",
             element:   <ParivateRaute><DeatailesCard></DeatailesCard></ParivateRaute>,
-            loader:() => fetch('http://localhost:5000/product/')  
+            loader:() => fetch('https://brand-shop-server-kqsd80ghj-sabbir-hosains-projects.vercel.app/product/')  
        
         },
         {
             path: "/Update_card/:id",
             element:   <ParivateRaute><UpdateCard></UpdateCard></ParivateRaute>,
-            loader:({params}) => fetch(`http://localhost:5000/product/${params.id}`)  
+            loader:({params}) => fetch(`https://brand-shop-server-kqsd80ghj-sabbir-hosains-projects.vercel.app/product/${params.id}`)  
        
         },
 
         {
             path: "/mycart",
             element:  <ParivateRaute><Mycart></Mycart></ParivateRaute> ,
-              loader:() => fetch('http://localhost:5000/product/') 
+              loader:() => fetch('https://brand-shop-server-kqsd80ghj-sabbir-hosains-projects.vercel.app/product/') 
         },
        
 

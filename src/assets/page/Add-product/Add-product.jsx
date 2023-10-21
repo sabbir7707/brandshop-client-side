@@ -22,7 +22,7 @@ const Addproduct = () => {
         const newproduct = { Name, Brand_Name, Type, Price, Short_description, Rating, Image }
         console.log(newproduct);
 
-        fetch('http://localhost:5000/product', {
+        fetch('https://brand-shop-server-kqsd80ghj-sabbir-hosains-projects.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

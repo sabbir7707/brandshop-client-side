@@ -23,7 +23,7 @@ const UpdateCard = () => {
         const Udateproduct = { Name, Brand_Name, Type, Price, Short_description, Rating, Image }
         console.log(Udateproduct);
        
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://brand-shop-server-kqsd80ghj-sabbir-hosains-projects.vercel.app/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

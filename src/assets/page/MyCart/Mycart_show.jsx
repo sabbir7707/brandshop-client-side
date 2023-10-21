@@ -25,7 +25,7 @@ const Mycart_show = ({dara ,prodictess , setprodictess }) => {
         'success'
       ) */
       console.log('delet confriom')
-      fetch(`http://localhost:5000/product/${_id}`,{
+      fetch(`https://brand-shop-server-kqsd80ghj-sabbir-hosains-projects.vercel.app/product/${_id}`,{
         method:'Delete'
       })
       .then(res => res.json())
