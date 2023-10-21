@@ -45,7 +45,7 @@ const Servercard = ({ dara }) => {
                         </div>
                         <div className="badge badge-outline">
 
-                            <Link to={`/Update_card/${Brand_Name}`}>
+                            <Link to={`/Update_card/${_id}`}>
                                 <button> Update </button>
                             </Link>
 

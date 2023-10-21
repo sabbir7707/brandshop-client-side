@@ -4,10 +4,10 @@ import { AuthContext } from "../../Authprovider/Authprovider";
 
 
 const Navbar = () => {
-    
-    const { userr, logout,} = useContext(AuthContext)
 
-    
+    const { userr, logout, } = useContext(AuthContext)
+
+
 
 
 
@@ -16,14 +16,14 @@ const Navbar = () => {
 
     }
     const navlist =
-    <>
-           <li> <NavLink to='/'> Home </NavLink></li>
-           <li> <NavLink to='/about'> About  </NavLink></li>
-           <li> <NavLink to='/AddProduct'> ADD Product </NavLink></li>
-           <li> <NavLink to='/mycart'>  My Cart </NavLink></li>
-           <li> <NavLink to='/login'> Login </NavLink></li>
-           <li> <NavLink to='/Register'> Register </NavLink></li>
-    </>
+        <>
+            <li> <NavLink to='/'>  <p className="font-bold"> Home  </p> </NavLink></li>
+
+            <li> <NavLink to='/AddProduct'>  <p className="font-bold">Add Product  </p> </NavLink></li>
+            <li> <NavLink to='/mycart'> <p className="font-bold">My Cart </p>  </NavLink></li>
+            <li> <NavLink to='/login'> <p className="font-bold"> Login</p>  </NavLink></li>
+            <li> <NavLink to='/Register'>  <p className="font-bold"> Register</p> </NavLink></li>
+        </>
 
     return (
         <div>
@@ -50,31 +50,31 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-           
 
-                     
+
+
 
                 <div className="navbar-end">
                     <h1 className="font-extrabold pr-2"> {userr?.displayName}</h1>
 
 
-                      
-                      {
-                      userr?.photoURL?
-                      
 
-                    
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img src={userr?.photoURL} />
-
-                        </div>
-                    </label>
-                    :
-                    <p></p>
+                    {
+                        userr?.photoURL ?
 
 
-                          }
+
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src={userr?.photoURL} />
+
+                                </div>
+                            </label>
+                            :
+                            <p></p>
+
+
+                    }
 
 
 

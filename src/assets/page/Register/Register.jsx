@@ -19,7 +19,8 @@ const Register = () => {
 
 
     const handelRegister = () => {
-        if (!/^(?=.*[A-Z])(?=.*\d)(?=.*\W).{6,}$/.test(password)) {
+        if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/.test(password))
+        {
 
             Swal.fire({
                 title: 'error!',

@@ -1,7 +1,12 @@
 
 
+import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2'
 const UpdateCard = () => {
+    const product =useLoaderData();
+    const { _id, Name, Brand_Name, Type, Price, Short_description, Rating, Image } =product
+    console.log(product);
+
     const handelUpdateProduct = event => {
 
         event.preventDefault();
@@ -15,26 +20,27 @@ const UpdateCard = () => {
         const Rating = form.Rating.value;
         const Image = form.Image.value;
 
-        const products = { Name, Brand_Name, Type, Price, Short_description, Rating, Image }
-        console.log(products);
-
-        fetch('http://localhost:5000/product', {
+        const Udateproduct = { Name, Brand_Name, Type, Price, Short_description, Rating, Image }
+        console.log(Udateproduct);
+       
+        fetch(`http://localhost:5000/product/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(products)
+            body: JSON.stringify(Udateproduct)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'success!',
                         text: 'user update successfullu',
                         icon: 'success',
-                        confirmButtonText: 'Cool'
+                        confirmButtonText: 'Ok'
                     })
+                   
 
                 }
             })
@@ -64,31 +70,31 @@ const UpdateCard = () => {
                 <div className="grid gap-2 mb-6 md:grid-cols-2">
                     <div >
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Name</p>
-                        <input type="text" name="Name" placeholder="Name" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Name" defaultValue={Name} placeholder="Name" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Brand Name</p>
-                        <input type="text" name="Brand_Name" placeholder="Brand Name" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Brand_Name" defaultValue={Brand_Name} placeholder="Brand Name" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Type</p>
-                        <input type="text" name="Type" placeholder="Type" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Type"  defaultValue={Type} placeholder="Type" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Price</p>
-                        <input type="text" name="Price" placeholder="Price" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Price" defaultValue={Price} placeholder="Price" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Short description</p>
-                        <input type="text" name="Short_description" placeholder="Short_description" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Short_description" defaultValue={Short_description} placeholder="Short_description" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white"> Rating</p>
-                        <input type="text" name="Rating" placeholder=" Rating" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Rating" defaultValue={Rating} placeholder=" Rating" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
                     <div>
                         <p className="  mb-1 text-sm font-medium text-gray-900 dark:text-white">Image</p>
-                        <input type="text" name="Image" placeholder="Image" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
+                        <input type="text" name="Image" defaultValue={Image} placeholder="Image" className="input rounded-l-none input-bordered rounded-r-none input-success  max-w-xl w-full " required />
                     </div>
 
 
@@ -96,7 +102,7 @@ const UpdateCard = () => {
 
 
                 </div>
-                <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  sm:w-auto   lg:w-40 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                <button type="submit" value="Update product" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  sm:w-auto   lg:w-40 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
             </form>
         </div>
     );

@@ -11,7 +11,7 @@ const Mycart_show = ({dara ,prodictess , setprodictess }) => {
  console.log(_id);
  Swal.fire({
     title: 'Are you sure?',
-    text: "You won't be able to revert this!",
+    text: "Do you want to delete the product?",
     icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
