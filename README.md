@@ -7,3 +7,6 @@
 - Details section where the details of the products can be seen
 - The products are shown according to the brand of the product
 
+##  live link
+:  https://brand-shop-3bb8e.web.app/
+
